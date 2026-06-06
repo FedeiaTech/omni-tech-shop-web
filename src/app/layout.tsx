@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     title: "Omni Tech | Catálogo Tecnológico",
     description:
       "Explorá nuestro catálogo de productos tecnológicos con asesoramiento personalizado.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Omni Tech" }],
   },
   robots: {
     index: true,
