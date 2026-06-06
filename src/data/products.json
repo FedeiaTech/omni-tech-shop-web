@@ -1,0 +1,90 @@
+[
+  {
+    "id": "OT-1001",
+    "name": "Motherboard X870 Pro",
+    "category": "Componentes",
+    "price": 250,
+    "currency": "USD",
+    "isFeatured": true,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["Socket AM5", "DDR5", "PCIe 5.0", "ATX"],
+    "description": "Motherboard de alto rendimiento para procesadores AMD Ryzen de última generación."
+  },
+  {
+    "id": "OT-1002",
+    "name": "SSD NVMe 1TB Samsung 990 Pro",
+    "category": "Almacenamiento",
+    "price": 110,
+    "currency": "USD",
+    "isFeatured": true,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["NVMe Gen4", "7450 MB/s lectura", "6900 MB/s escritura", "M.2 2280"],
+    "description": "Almacenamiento ultrarrápido para gaming y trabajo profesional."
+  },
+  {
+    "id": "OT-1003",
+    "name": "Monitor LG 27\" 4K IPS",
+    "category": "Monitores",
+    "price": 320,
+    "currency": "USD",
+    "isFeatured": true,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["27 pulgadas", "4K UHD", "IPS", "144Hz", "HDR400"],
+    "description": "Monitor profesional con colores precisos y alta frecuencia de refresco."
+  },
+  {
+    "id": "OT-1004",
+    "name": "Teclado Mecánico Keychron K8",
+    "category": "Periféricos",
+    "price": 95,
+    "currency": "USD",
+    "isFeatured": false,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["Switches Gateron Red", "TKL", "Bluetooth 5.1", "Retroiluminado RGB"],
+    "description": "Teclado mecánico compacto inalámbrico para productividad y gaming."
+  },
+  {
+    "id": "OT-1005",
+    "name": "Router TP-Link Archer AXE75",
+    "category": "Redes",
+    "price": 140,
+    "currency": "USD",
+    "isFeatured": false,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["WiFi 6E", "Tri-band", "4804 Mbps", "8 antenas"],
+    "description": "Router de última generación con cobertura total y velocidad máxima."
+  },
+  {
+    "id": "OT-1006",
+    "name": "RAM DDR5 32GB Kingston Fury",
+    "category": "Componentes",
+    "price": 130,
+    "currency": "USD",
+    "isFeatured": false,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["DDR5-6000", "32GB (2x16GB)", "CL36", "RGB"],
+    "description": "Memoria de alta velocidad optimizada para plataformas DDR5 modernas."
+  },
+  {
+    "id": "OT-1007",
+    "name": "Hub USB-C 7 en 1 Anker",
+    "category": "Accesorios",
+    "price": 45,
+    "currency": "USD",
+    "isFeatured": false,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["USB-C 100W PD", "HDMI 4K", "USB-A 3.0 x3", "SD/MicroSD"],
+    "description": "Hub compacto que expande la conectividad de tu laptop."
+  },
+  {
+    "id": "OT-1008",
+    "name": "HDD Externo WD 4TB",
+    "category": "Almacenamiento",
+    "price": 90,
+    "currency": "USD",
+    "isFeatured": false,
+    "image": "/assets/images/placeholder.png",
+    "specs": ["4TB", "USB 3.0", "2.5 pulgadas", "Portable"],
+    "description": "Almacenamiento externo confiable para backup y transporte de datos."
+  }
+]
