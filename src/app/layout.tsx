@@ -18,7 +18,7 @@ const orbitron = Orbitron({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://omnitech.com.ar"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://omni-tech-shop.vercel.app"
   ),
   title: {
     default: "Omni Tech | Catálogo Tecnológico",
