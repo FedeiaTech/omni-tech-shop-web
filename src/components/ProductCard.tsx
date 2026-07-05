@@ -1,31 +1,49 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import type { Product } from "@/types";
-
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5491100000000";
 
 interface Props {
   product: Product;
 }
 
 export default function ProductCard({ product }: Props) {
+  // Show the primary image, falling back to the first, then a placeholder.
+  const primaryImage =
+    product.images.find((img) => img.isPrimary) ?? product.images[0];
+
+  const detailHref = `/producto/${product.id}`;
+
   function handleWhatsAppContact() {
-    const message = encodeURIComponent(
-      `Hola, me interesa el producto:\n\n${product.name}\n\nCódigo: ${product.id}`
-    );
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    window.open(buildWhatsAppUrl(product), "_blank");
   }
 
   return (
     <article className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-100">
-      <div className="bg-gray-100 h-48 flex items-center justify-center">
-        <span className="text-gray-400 text-sm">Imagen del producto</span>
-      </div>
+      <Link href={detailHref} className="relative block h-48 bg-gray-100">
+        {primaryImage ? (
+          <Image
+            src={primaryImage.url}
+            alt={primaryImage.alt ?? product.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <span className="text-sm text-gray-400">Imagen del producto</span>
+          </div>
+        )}
+      </Link>
 
       <div className="p-5 flex flex-col flex-1 gap-3">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-semibold text-gray-900 text-base leading-snug">
-            {product.name}
+            <Link href={detailHref} className="hover:text-blue-700">
+              {product.name}
+            </Link>
           </h3>
           {product.isFeatured && (
             <span className="shrink-0 text-xs bg-blue-100 text-blue-700 font-medium px-2 py-0.5 rounded-full">
