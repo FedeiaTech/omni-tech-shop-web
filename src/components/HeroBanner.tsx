@@ -17,14 +17,29 @@ interface Triangle {
   delay: number;
 }
 
+// Seeded PRNG (mulberry32): deterministic so SSR and client hydration produce
+// identical values. Math.random() would differ between the two renders and
+// trigger a hydration mismatch.
+function createSeededRandom(seed: number): () => number {
+  let state = seed;
+  return () => {
+    state |= 0;
+    state = (state + 0x6d2b79f5) | 0;
+    let t = Math.imul(state ^ (state >>> 15), 1 | state);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 function generateTriangles(): Triangle[] {
+  const random = createSeededRandom(1337);
   return Array.from({ length: TOTAL }, (_, i) => ({
     id: i + 1,
-    size: Math.floor(Math.random() * 50) + 1,
-    rotate: Math.floor(Math.random() * 360),
-    tx: Math.floor(Math.random() * 2000) - 1000,
-    ty: Math.floor(Math.random() * 2000) - 1000,
-    hue: Math.floor(Math.random() * 360),
+    size: Math.floor(random() * 50) + 1,
+    rotate: Math.floor(random() * 360),
+    tx: Math.floor(random() * 2000) - 1000,
+    ty: Math.floor(random() * 2000) - 1000,
+    hue: Math.floor(random() * 360),
     delay: (i + 1) * -(TIME / TOTAL),
   }));
 }
