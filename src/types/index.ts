@@ -1,3 +1,9 @@
+export interface ProductImage {
+  url: string;
+  alt?: string;
+  isPrimary: boolean;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -5,9 +11,9 @@ export interface Product {
   price: number;
   currency: string;
   isFeatured: boolean;
-  image: string;
   specs: string[];
   description?: string;
+  images: ProductImage[];
 }
 
 export type Category =

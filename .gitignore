@@ -31,17 +31,9 @@ desktop.ini
 *.swp
 *.swo
 
-# ─── AI / Claude Code ───────────────────────────────────────────────────────
-.claude/
-# Engram persistent memory
-memory/
-# SDD artifacts (local only)
-openspec/
-.atl/
-# Claude Code session files
-.claudesession
-*.claudesession
-# ────────────────────────────────────────────────────────────────────────────
+# Local notes (not part of the app)
+SUPABASE_MIGRATION_PLAN.md
+instrucciones.md
 
 # Vercel
 .vercel

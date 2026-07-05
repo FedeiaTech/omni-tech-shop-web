@@ -1,14 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import productsData from "@/data/products.json";
 import type { Category, Product } from "@/types";
 
-export function useProducts() {
+export function useProducts(products: Product[]) {
   const [activeCategory, setActiveCategory] = useState<Category>("Todos");
   const [searchTerm, setSearchTerm] = useState("");
-
-  const products: Product[] = productsData as Product[];
 
   const filteredProducts = useMemo(() => {
     return products

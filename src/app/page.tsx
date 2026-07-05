@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import HeroBanner from "@/components/HeroBanner";
 import FeaturedProductsGrid from "@/components/FeaturedProductsGrid";
-import productsData from "@/data/products.json";
-import type { Product } from "@/types";
+import { getProducts } from "@/lib/products";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Inicio",
 };
 
-export default function HomePage() {
-  const featured = (productsData as Product[]).filter((p) => p.isFeatured);
+export default async function HomePage() {
+  const products = await getProducts();
+  const featured = products.filter((p) => p.isFeatured);
 
   return (
     <>

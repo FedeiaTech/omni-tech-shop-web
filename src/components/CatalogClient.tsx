@@ -1,18 +1,23 @@
 "use client";
 
 import { useProducts } from "@/hooks/useProducts";
+import type { Product } from "@/types";
 import SearchBar from "./SearchBar";
 import FilterBar from "./FilterBar";
 import ProductList from "./ProductList";
 
-export default function CatalogClient() {
+interface Props {
+  products: Product[];
+}
+
+export default function CatalogClient({ products }: Props) {
   const {
     filteredProducts,
     activeCategory,
     setActiveCategory,
     searchTerm,
     setSearchTerm,
-  } = useProducts();
+  } = useProducts(products);
 
   return (
     <>
