@@ -1,7 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 export const PRODUCT_IMAGES_BUCKET = "product-images";
-export const MAX_IMAGES_PER_PRODUCT = 5;
+export const MAX_IMAGES_PER_PRODUCT = 6;
 
 // Two-step upload: push the binary to Storage, then store its public URL as a
 // row in product_images. Shared by the create (staged) and edit flows.
