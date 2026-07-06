@@ -41,6 +41,18 @@ export default function InstitucionalPage() {
         </div>
       </div>
 
+      <p className="mb-16 text-center text-sm text-gray-500">
+        Un proyecto de{" "}
+        <a
+          href="https://iatechweb.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-gray-900 underline underline-offset-2 transition-colors hover:text-blue-700"
+        >
+          IA Tech
+        </a>
+      </p>
+
       <ContactForm />
     </div>
   );
